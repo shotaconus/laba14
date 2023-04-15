@@ -33,7 +33,4 @@ void pushBack(Vector *v, int x);
 
 void popBack(Vector *v);
 
-int* atVector(Vector *v, size_t index);
-
-
 #endif //LABA14_VECTOR_H
