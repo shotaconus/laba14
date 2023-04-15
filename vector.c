@@ -36,3 +36,19 @@ void reserve(Vector *v, size_t newCapacity) {
         }
     }
 }
+
+void clear(Vector *v) {
+    v->size = 0;
+}
+
+void shrinkToFit(Vector *v) {
+    for (int i = v->size - 1; i < v->capacity; i++)
+        free(&v->data[i]);
+
+    v->capacity = v->size;
+}
+
+void deleteVector(Vector *v) {
+    free(v->data);
+}
+
