@@ -55,6 +55,12 @@ build CMakeFiles/laba14.dir/main.c.obj: C_COMPILER__laba14_Debug C$:/Users/tesja
   OBJECT_DIR = CMakeFiles\laba14.dir
   OBJECT_FILE_DIR = CMakeFiles\laba14.dir
 
+build CMakeFiles/laba14.dir/vector.c.obj: C_COMPILER__laba14_Debug C$:/Users/tesja/CLionProjects/laba14/vector.c || cmake_object_order_depends_target_laba14
+  DEP_FILE = CMakeFiles\laba14.dir\vector.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\laba14.dir
+  OBJECT_FILE_DIR = CMakeFiles\laba14.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target laba14
@@ -63,7 +69,7 @@ build CMakeFiles/laba14.dir/main.c.obj: C_COMPILER__laba14_Debug C$:/Users/tesja
 #############################################
 # Link the executable laba14.exe
 
-build laba14.exe: C_EXECUTABLE_LINKER__laba14_Debug CMakeFiles/laba14.dir/main.c.obj
+build laba14.exe: C_EXECUTABLE_LINKER__laba14_Debug CMakeFiles/laba14.dir/main.c.obj CMakeFiles/laba14.dir/vector.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\laba14.dir
