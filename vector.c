@@ -52,3 +52,59 @@ void deleteVector(Vector *v) {
     free(v->data);
 }
 
+bool isEmpty(Vector *v) {
+    return v->size == 0;
+}
+
+bool isFull(Vector *v) {
+    return v->size == v->capacity ? true : false;
+}
+
+int getVectorValue(Vector *v, size_t i) {
+    return v->data[i];
+}
+
+void pushBack(Vector *v, int x) {
+    if (isFull(v)) {
+        reserve(v, v->capacity + 1);
+    } else if (isEmpty(v)) {
+        createVector(1);
+    }
+    v->data[v->size] = x;
+    v->size += 1;
+}
+
+void popBack(Vector *v) {
+    if (isEmpty(v)) {
+        fprintf(stderr, "bad alloc");
+        exit(1);
+    } else {
+        v->size--;
+    }
+}
+
+int* atVector(Vector *v, size_t index) {
+    if (index >= v->size) {
+        fprintf(stderr, "IndexError: a[%d] is not exists", index);
+        exit(1);
+    } else
+        return &v->data[index];
+}
+
+int* back(Vector *v) {
+    if (v->size == 0) {
+        fprintf(stderr, "IndexError: a[back] is not exists");
+        exit(1);
+    } else {
+        return &v->data[v->size - 1];
+    }
+}
+
+int* front(Vector *v) {
+    if (v->size == 0) {
+        fprintf(stderr, "IndexError: a[front] is not exists");
+        exit(1);
+    } else {
+        return &v->data[0];
+    }
+}
